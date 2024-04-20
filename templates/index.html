@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Violence Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Violence Detection</h1>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <label for="videoFile" class="button">Upload Video</label></br>
+            <input type="file" id="videoFile" name="file" accept="video/*" onchange="displayFileName()"><br>
+            <div id="fileNameDisplay" class="file-name"></div><br>
+            <button type="submit" class="button">Analyze Video</button>
+           
+
+        </form>
+        <div id="result" class="result-container"></div>
+        <a href="report.html" target="_blank" class="report-link"><i class="fa-solid fa-message"></i> Report</a>
+    </div>
+
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+    <script>
+        function displayFileName() {
+            var fileInput = document.getElementById('videoFile');
+            var fileNameDisplay = document.getElementById('fileNameDisplay');
+            if (fileInput.files.length > 0) {
+                fileNameDisplay.textContent = 'Selected file: ' + fileInput.files[0].name;
+            } else {
+                fileNameDisplay.textContent = '';
+            }
+        }
+    </script>
+</body>
+</html>

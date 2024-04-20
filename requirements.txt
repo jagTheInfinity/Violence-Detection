@@ -1,0 +1,9 @@
+Python 3.12
+pip install Tensorflow=2.7.0
+pip install scikit-image
+pip install Flask
+pip install ipython
+pip install opencv-python
+pip install numpy
+pip install matplotlib
+
